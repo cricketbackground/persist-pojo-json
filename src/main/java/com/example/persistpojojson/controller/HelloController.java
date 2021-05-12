@@ -23,9 +23,9 @@ public class HelloController {
     private final OrderRepository orderRepository;
 
     @PostMapping
-    public ResponseEntity<ApiResponse> persist(@RequestBody InputRequest apiRequest) {
+    public ResponseEntity<ApiResponse> persist(@RequestBody InputRequest inputRequest) {
         Order order = Order.builder()
-                .apiRequest(apiRequest)
+                .apiRequest(inputRequest)
                 .build();
         Order saved = orderRepository.save(order);
         ApiResponse apiResponse = ApiResponse.builder()

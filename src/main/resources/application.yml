@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: validate
+        format-sql: true
+        implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 25
+      max-lifetime: 600000
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: springboot
+    password: springboot
+    driver-class-name: org.postgresql.Driver
+
+logging.level.com.zaxxer.hikari.HikariConfig: DEBUG
